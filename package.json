@@ -1,0 +1,24 @@
+{
+  "name": "refreshos",
+  "version": "1.0.0",
+  "description": "Pagina web de venta de bebidas por lotes con pago externo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AxelYR/RefreshOS.git"
+  },
+  "keywords": [
+    "web",
+    "drinks",
+    "e-comerce"
+  ],
+  "author": "yaelrh/paloma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AxelYR/RefreshOS/issues"
+  },
+  "homepage": "https://github.com/AxelYR/RefreshOS#readme"
+}
