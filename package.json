@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/AxelYR/RefreshOS/issues"
   },
-  "homepage": "https://github.com/AxelYR/RefreshOS#readme"
+  "homepage": "https://github.com/AxelYR/RefreshOS#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
 }
