@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="../output.css" rel="stylesheet">
+  <!-- Flowbite JS para el toggle del menú -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
+
+  <header>
+    <div id="nav-placeholder"></div>
+    <script type="module">
+      import { loadNavbar } from '../js/navbar.js';
+      loadNavbar();
+    </script>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero con imagen -->
+    <section class="bg-white dark:bg-gray-900">
+      <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+          <h1
+            class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            Bodega Online para comprar bebidas por lotes</h1>
+          <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            Ahorra al comprar por lotes con atención rápida y perzonalizada.
+          </p>
+          <a href="login.html"
+            class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            Crear cuenta
+            <svg class="w-5 h-5 ml-2 -mr-1" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="compras.html"
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            Comprar ahora
+          </a>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+          <img src="/media/cajaRefrescosTrans.webp" alt="cajaRefrescos">
+        </div>
+      </div>
+    </section>
+
+    <!-- Porque escogernos -->
+    <section class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mb-8 lg:mb-16">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+            ¿Por qué comprar con nosotros?
+          </h2>
+          <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+            En RefreshOS tenemos un compromiso con el cliente y nuestra prioridad es entregar un servicio de calidad a
+            un precio increíble.
+          </p>
+        </div>
+
+        <!-- Grid principal: tarjetas (izquierda) + imagen (derecha) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Tarjetas -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <div>
+              <div
+                class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h6l2 4m-8-4v8H9m4-8V6c0-.26522-.1054-.51957-.2929-.70711C12.5196 5.10536 12.2652 5 12 5H4c-.26522 0-.51957.10536-.70711.29289C3.10536 5.48043 3 5.73478 3 6v9h2m14 0h2v-4m0 0h-5M8 8.66669V10l1.5 1.5m10 5c0 1.3807-1.1193 2.5-2.5 2.5s-2.5-1.1193-2.5-2.5S15.6193 14 17 14s2.5 1.1193 2.5 2.5Zm-10 0C9.5 17.8807 8.38071 19 7 19s-2.5-1.1193-2.5-2.5S5.61929 14 7 14s2.5 1.1193 2.5 2.5Z" />
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Envios rápidos</h3>
+              <p class="text-gray-500 dark:text-gray-400">
+                Una vez confirmado el pago, enviaremos tus productos de inmediato.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div>
+              <div
+                class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M11.644 3.066a1 1 0 0 1 .712 0l7 2.666A1 1 0 0 1 20 6.68a17.694 17.694 0 0 1-2.023 7.98 17.406 17.406 0 0 1-5.402 6.158 1 1 0 0 1-1.15 0 17.405 17.405 0 0 1-5.403-6.157A17.695 17.695 0 0 1 4 6.68a1 1 0 0 1 .644-.949l7-2.666Zm4.014 7.187a1 1 0 0 0-1.316-1.506l-3.296 2.884-.839-.838a1 1 0 0 0-1.414 1.414l1.5 1.5a1 1 0 0 0 1.366.046l4-3.5Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Compras seguras</h3>
+              <p class="text-gray-500 dark:text-gray-400">
+                En ningún momento tendrás que introducir tu información bancaria, todos los pagos se manejan por
+                depositos.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div>
+              <div
+                class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M12 2a7 7 0 0 0-7 7 3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V9a5 5 0 1 1 10 0v7.083A2.919 2.919 0 0 1 14.083 19H14a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h1a2 2 0 0 0 1.732-1h.351a4.917 4.917 0 0 0 4.83-4H19a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3 7 7 0 0 0-7-7Zm1.45 3.275a4 4 0 0 0-4.352.976 1 1 0 0 0 1.452 1.376 2.001 2.001 0 0 1 2.836-.067 1 1 0 1 0 1.386-1.442 4 4 0 0 0-1.321-.843Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Soporte técnico y de ventas 24/7</h3>
+              <p class="text-gray-500 dark:text-gray-400">
+                Ante cualquier problema puedes marcar o enviar un correo a nuestro soporte y serás atendido lo más
+                pronto posible.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div>
+              <div
+                class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M20.29 8.567c.133.323.334.613.59.85v.002a3.536 3.536 0 0 1 0 5.166 2.442 2.442 0 0 0-.776 1.868 3.534 3.534 0 0 1-3.651 3.653 2.483 2.483 0 0 0-1.87.776 3.537 3.537 0 0 1-5.164 0 2.44 2.44 0 0 0-1.87-.776 3.533 3.533 0 0 1-3.653-3.654 2.44 2.44 0 0 0-.775-1.868 3.537 3.537 0 0 1 0-5.166 2.44 2.44 0 0 0 .775-1.87 3.55 3.55 0 0 1 1.033-2.62 3.594 3.594 0 0 1 2.62-1.032 2.401 2.401 0 0 0 1.87-.775 3.535 3.535 0 0 1 5.165 0 2.444 2.444 0 0 0 1.869.775 3.532 3.532 0 0 1 3.652 3.652c-.012.35.051.697.184 1.02ZM9.927 7.371a1 1 0 1 0 0 2h.01a1 1 0 0 0 0-2h-.01Zm5.889 2.226a1 1 0 0 0-1.414-1.415L8.184 14.4a1 1 0 0 0 1.414 1.414l6.218-6.217Zm-2.79 5.028a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Precios competitivos</h3>
+              <p class="text-gray-500 dark:text-gray-400">
+                Priorizamos una buena relación con nuestros clientes a la ganancia inmediata, nuestros precios son
+                justos y claros.
+              </p>
+            </div>
+          </div>
+          <!-- Imagen a la derecha -->
+          <div class="hidden lg:flex justify-center lg:justify-end">
+            <img src="/media/confianza.webp" alt="Ilustración" class="rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- pago seguro -->
+    <section class="bg-white dark:bg-gray-900">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="w-full hidden dark:block" src="/media/pagoSeguro.webp" alt="pagosSeguros">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Pagos seguros, transacciones simples.</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">En RefreshOS no manejamos directamente la Información de pago, al realizar tu pedido se te sera enviado un correo con los pasos para proceder al pago mediante una transferencia bancaria.</p>
+            <a href="login.html" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                Iniciar sesión
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+  </main>
+
+  <div>
+    <div id="footer-placeholder"></div>
+    <script type="module">
+      import { loadFooter } from '../js/footer.js';
+      loadFooter();
+    </script>
+  </div>
+
+</body>
+
+</html>
