@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- Flowbite JS para el toggle del menú -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </head>
+
 <body class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
 
     <header>
@@ -19,7 +21,174 @@
     </header>
 
     <main class="flex-grow">
-        
+        <main class="flex-grow">
+            <!-- Hero / Encabezado -->
+            <section class="bg-white dark:bg-gray-900">
+                <div class="grid max-w-screen-xl px-4 py-12 mx-auto lg:gap-8 lg:py-16 lg:grid-cols-12">
+                    <div class="mr-auto place-self-center lg:col-span-7">
+                        <h1
+                            class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                            Acerca de RefreshOS — Bodega Virtual de Bebidas
+                        </h1>
+                        <p
+                            class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                            Proyecto escolar que simula una plataforma B2B para distribución al mayoreo de bebidas.
+                            Interfaz simple,
+                            gestión de pedidos por lotes y notificaciones por correo para facilitar el flujo comercial
+                            sin pagos en línea.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="compras.html"
+                                class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                                Ver catálogo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex justify-center">
+                        <img src="/media/b2b.webp" alt="Cajas y lotes de bebidas"
+                            class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Misión / Visión -->
+            <section class="bg-gray-50 dark:bg-gray-800">
+                <div class="py-10 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                    <div class="max-w-screen-md mb-8 lg:mb-16">
+                        <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Misión y
+                            visión</h2>
+                        <p class="text-gray-500 sm:text-lg dark:text-gray-400">
+                            <strong>Misión:</strong> Facilitar el abastecimiento al por mayor de bebidas para pequeños y
+                            medianos
+                            comercios mediante una plataforma clara y eficiente, enfocada en pedidos por lotes y
+                            comunicación directa.
+                        </p>
+                        <p class="mt-4 text-gray-500 sm:text-lg dark:text-gray-400">
+                            <strong>Visión:</strong> Ser una herramienta educativa que demuestre buenas prácticas de
+                            diseño web y
+                            arquitectura de sistemas para comercio mayorista, priorizando simplicidad, trazabilidad y
+                            experiencia de usuario.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-900">
+                            <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Enfoque académico</h3>
+                            <p class="text-gray-500 dark:text-gray-400">Desarrollado como proyecto escolar para
+                                demostrar integración
+                                frontend-backend, diseño de base de datos y envíos automáticos de correo.</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-900">
+                            <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Operación simple</h3>
+                            <p class="text-gray-500 dark:text-gray-400">Pedidos por lotes, historial de pedidos y
+                                notificaciones — sin
+                                pasarelas de pago integradas, ideal para B2B y pruebas académicas.</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-900">
+                            <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Privacidad mínima</h3>
+                            <p class="text-gray-500 dark:text-gray-400">Solo se almacenan datos esenciales del usuario y
+                                su historial
+                                de pedidos, acorde con el alcance del proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Características técnicas -->
+            <section class="bg-white dark:bg-gray-900">
+                <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                    <div class="grid gap-12 lg:grid-cols-2 items-center">
+                        <div>
+                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                                Arquitectura y tecnologías</h2>
+                            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                                El proyecto emplea un stack moderno y ligero pensado para un prototipo funcional:
+                                frontend con Tailwind +
+                                Flowbite, backend con Node.js/Express, y base de datos relacional (MySQL o MariaDB). El
+                                envío de correos se
+                                configura con un servicio SMTP (Nodemailer / SendGrid).
+                            </p>
+
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 mt-1 mr-3 text-primary-600 dark:text-primary-400" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4"></path>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">Frontend</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">HTML5, Tailwind CSS, Flowbite.</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 mt-1 mr-3 text-primary-600 dark:text-primary-400" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4"></path>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">Backend</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">Node.js, rutas REST para
+                                            usuarios, productos y pedidos.</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 mt-1 mr-3 text-primary-600 dark:text-primary-400" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4"></path>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">Datos</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">Modelo relacional optimizado con
+                                            tablas para usuarios, productos, pedidos y relación de pedido-productos.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="hidden lg:flex justify-center">
+                            <img src="/media/tecnologiaWeb.webp" alt="Stack tecnológico"
+                                class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Equipo (ficticio) y créditos -->
+            <section class="bg-gray-50 dark:bg-gray-800">
+                <div class="py-12 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                    <div class="max-w-screen-md mb-8 lg:mb-16">
+                        <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Equipo del
+                            proyecto</h2>
+                        <p class="text-gray-500 sm:text-lg dark:text-gray-400">
+                          Curso: Gestión de proyectos
+                            (Semestre 7). Este
+                            prototipo tiene fines académicos y de demostración.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow dark:bg-gray-900">
+                            <img class="w-24 h-24 mb-4 rounded-full" src="/media/avatar1.webp" alt="Avatar 1">
+                            <h3 class="mb-1 text-xl font-semibold text-white">Axel Reynagaz</h3>
+                            <p class="text-gray-500 dark:text-gray-400">Frontend / UX</p>
+                        </div>
+
+                        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow dark:bg-gray-900">
+                            <img class="w-24 h-24 mb-4 rounded-full" src="/media/avatar2.webp" alt="Avatar 2">
+                            <h3 class="mb-1 text-xl font-semibold text-white">Paloma Becerraz</h3>
+                            <p class="text-gray-500 dark:text-gray-400">Backend / DB</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
     </main>
 
     <div>

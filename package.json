@@ -23,6 +23,7 @@
   "homepage": "https://github.com/AxelYR/RefreshOS#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "flowbite": "^3.1.2",
     "tailwindcss": "^4.1.13"
   }
 }
