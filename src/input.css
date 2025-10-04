@@ -1,2 +1,12 @@
 @import "tailwindcss";
-@import "flowbite/src/themes/default";
+@import "../node_modules/flowbite/src/themes/default.css";
+/* Tu archivo input.css */
+
+/* Directivas estándar de Tailwind CSS */
+@tailwind utilities;
+
+/* Paso 3: Importar el plugin de Flowbite */
+@plugin "../node_modules/flowbite/plugin.js";
+
+/* Paso 4: Indicar la fuente de los archivos de Flowbite */
+@source "../node_modules/flowbite";
