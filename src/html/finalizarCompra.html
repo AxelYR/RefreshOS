@@ -7,6 +7,8 @@
     <link href="../output.css" rel="stylesheet">
     <!-- Flowbite JS para el toggle del menú -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
 
@@ -18,8 +20,64 @@
         </script>
     </header>
 
-    <main class="flex-grow">
-        
+<main class="flex-grow container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Tu Carrito de Compras</h1>
+
+        <div class="lg:flex lg:gap-8">
+            
+            <!-- Columna Izquierda: Lista de Productos -->
+            <div class="lg:w-2/3">
+                <div id="cart-items-container" class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-8">
+                    <!-- Los elementos del carrito se cargarán aquí -->
+                    <p class="text-gray-600 dark:text-gray-400">Cargando carrito...</p>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Resumen y Formulario de Pago -->
+            <div class="lg:w-1/3">
+                <!-- Resumen de Total -->
+                <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Resumen del Pedido</h2>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 dark:text-gray-400">Subtotal</span>
+                        <span id="cart-subtotal" class="text-gray-900 dark:text-white font-semibold">$0.00</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span class="text-gray-700 dark:text-gray-400">Envío</span>
+                        <span class="text-gray-900 dark:text-white font-semibold">Gratis</span>
+                    </div>
+                    <hr class="my-4 border-gray-200 dark:border-gray-700">
+                    <div class="flex justify-between">
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">Total</span>
+                        <span id="cart-total" class="text-xl font-bold text-gray-900 dark:text-white">$0.00</span>
+                    </div>
+                </div>
+
+                <!-- Formulario de Pago -->
+                <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Información de Envío</h2>
+                    <form id="payment-form">
+                        <div class="mb-4">
+                            <label for="nombre" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" class="shadow-sm appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 dark:bg-gray-700 leading-tight focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" class="shadow-sm appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 dark:bg-gray-700 leading-tight focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="direccion" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Dirección:</label>
+                            <input type="text" id="direccion" name="direccion" class="shadow-sm appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 dark:bg-gray-700 leading-tight focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-md transition focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800">
+                            Confirmar Pedido
+                        </button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
     </main>
 
     <div>
@@ -29,6 +87,10 @@
             loadFooter();
         </script>
     </div>
+
+<script src="../js/finalizarCompra.js" type="module"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 </body>
 

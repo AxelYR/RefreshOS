@@ -31,20 +31,20 @@
       <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
           <div class="duration-700 ease-in-out" data-carousel-item>
-            <img src="/media/carrusel/canadadry.webp" class="block w-full h-full object-contain" alt="Canada Dry">
+            <img src="/carrusel/canadadry.webp" class="block w-full h-full object-contain" alt="Canada Dry">
           </div>
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/media/carrusel/cocacola.webp" class="block w-full h-full object-contain" alt="CocaCola">
+            <img src="/carrusel/cocacola.webp" class="block w-full h-full object-contain" alt="CocaCola">
           </div>
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/media/carrusel/penafiel.webp" class="block w-full h-full object-contain" alt="Peñafiel">
+            <img src="/carrusel/penafiel.webp" class="block w-full h-full object-contain" alt="Peñafiel">
           </div>
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/media/carrusel/monsterblanco.webp" class="block w-full h-full object-contain"
+            <img src="/carrusel/monsterblanco.webp" class="block w-full h-full object-contain"
               alt="Monster Blanco">
           </div>
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/media/carrusel/liquidD.webp" class="block w-full h-full object-contain" alt="Liquid Death">
+            <img src="/carrusel/liquidD.webp" class="block w-full h-full object-contain" alt="Liquid Death">
           </div>
         </div>
         <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
@@ -88,8 +88,13 @@
       </div>
     </section>
 
+    <section class="container mx-auto px-4 py-8">
+      <div id="product-list-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        </div>
+    </section>
+
     <!--placeholder para cuando no hay productos -->
-    <section id="products-placeholder" class="py-12">
+    <section id="products-placeholder" class="py-12 hidden">
       <div class="container mx-auto px-4 text-center">
         <div class="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-2xl p-8 border border-dashed border-gray-300 dark:border-gray-700">
           <div class="flex flex-col items-center">
@@ -107,6 +112,13 @@
       </div>
     </section>
 
+    <script type="module">
+      import { loadFooter } from '../js/footer.js';
+      loadFooter();
+    </script>
+  </div>
+
+  <script src="../js/compras.js" type="module"></script>
     
   </main>
 

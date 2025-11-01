@@ -1,0 +1,20 @@
+[
+  {
+    "id": "item001",
+    "nombre": "Sprite 100 piezas",
+    "precio": 2200,
+    "ruta_imagen": "/sprite.webp"
+  },
+  {
+    "id": "item002",
+    "nombre": "Coca cola 100 piezas",
+    "precio": 1900,
+    "ruta_imagen": "/cocacola.webp"
+  },
+  {
+    "id": "item003",
+    "nombre": "Tonicol 100 piezas",
+    "precio": 1800,
+    "ruta_imagen": "/tonicol.webp"
+  }
+]

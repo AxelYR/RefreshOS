@@ -6,7 +6,7 @@ export function loadFooter() {
       <div class="sm:flex sm:items-center sm:justify-between">
         <div class="mb-6 md:mb-0">
           <div class="flex items-center">
-            <img src="/media/LogoTrasnparente.webp" class="mr-3 h-8 rounded-full" alt="Logo" />
+            <img src="/LogoTrasnparente.webp" class="mr-3 h-8 rounded-full" alt="Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">RefreshOS</span>
           </div>
           <!-- Redes sociales -->
