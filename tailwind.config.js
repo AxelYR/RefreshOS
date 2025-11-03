@@ -4,9 +4,6 @@ module.exports = {
 
   content: [
     "./src/**/*.{html,js}",
-    // MUY IMPORTANTE: Si tu HTML con el carrusel está en la raíz (como index.html),
-    // descomenta la siguiente línea o Tailwind no lo verá.
-    // './*.html', 
     "./node_modules/flowbite/**/*.js"
   ],
 

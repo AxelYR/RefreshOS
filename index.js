@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config(); // carga la variable del archivo .env
 import express from 'express';
 import bodyparser from 'body-parser';
 import cors from 'cors';

@@ -1,46 +1,60 @@
-const CART_API_URL = 'http://localhost:9090/cart';
-const ORDER_API_URL = 'http://localhost:9090/order';
-
-// Variable para almacenar los ítems actuales del carrito
-let currentCartItems = [];
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a elementos HTML
+    // Referencias a los elementos HTML
     const cartItemsContainer = document.getElementById('cart-items-container');
-    const cartSubtotalElement = document.getElementById('cart-subtotal');
     const cartTotalElement = document.getElementById('cart-total');
     const paymentForm = document.getElementById('payment-form');
+    
+    // URLs de la API
+    const CART_API_URL = 'http://localhost:9090/cart';
+    const ORDER_API_URL = 'http://localhost:9090/order';
 
-    // Verificar que los elementos existan
-    if (!cartItemsContainer || !cartSubtotalElement || !cartTotalElement || !paymentForm) {
-        console.error('Error: Faltan elementos HTML en finalizarCompra.html');
-        return;
+    let currentCartItems = []; // Almacenar los items del carrito
+
+    // Revisar si hay un usuario logueado
+    const userJSON = localStorage.getItem('currentUser');
+    const user = userJSON ? JSON.parse(userJSON) : null;
+
+    if (user && user.email) {
+        // Si hay usuario, buscar el campo de email
+        const emailInput = document.getElementById('email');
+        if (emailInput) {
+            // Autocompletar y deshabilitar el campo
+            emailInput.value = user.email;
+            emailInput.disabled = true;
+        }
     }
-
-    // --- Función para obtener y mostrar el contenido del carrito ---
+    
+    // Función para obtener y mostrar el contenido del carrito
     async function fetchAndDisplayCart() {
+        if (!cartItemsContainer || !cartTotalElement) {
+            console.error('Error: Faltan contenedores HTML (cart-items-container o cart-total).');
+            return;
+        }
+
         try {
             const response = await fetch(CART_API_URL);
-            if (!response.ok) throw new Error('Error al cargar carrito');
-            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const cart = await response.json();
-            currentCartItems = cart; // Guardar el carrito
-            renderCartItems(cart); // Renderizar
+            currentCartItems = cart; // Guardar el carrito actual
+            renderCartItems(cart); // Llamar a la función para renderizar
         } catch (error) {
-            console.error(error);
-            cartItemsContainer.innerHTML = '<p class="text-red-500">Error al cargar el carrito.</p>';
+            console.error('Error al obtener el carrito:', error);
+            cartItemsContainer.innerHTML = '<p class="text-red-500">Error al cargar el carrito. Por favor, intente de nuevo más tarde.</p>';
+            cartTotalElement.textContent = '$0.00';
         }
     }
 
-    // --- Función para renderizar los elementos del carrito ---
+    // Función para renderizar los elementos del carrito en la página
     function renderCartItems(cart) {
-        cartItemsContainer.innerHTML = '';
+        cartItemsContainer.innerHTML = ''; // Limpia el contenedor
         let total = 0;
-
+        
         const submitButton = paymentForm.querySelector('button[type="submit"]');
 
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<p class="text-gray-600 dark:text-gray-400">Tu carrito está vacío.</p>';
+            cartItemsContainer.innerHTML = '<p class="text-gray-600">Tu carrito está vacío.</p>';
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.classList.add('opacity-50', 'cursor-not-allowed');
@@ -54,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.forEach(item => {
                 const itemPrice = item.precio * item.cantidad;
                 total += itemPrice;
-                const imageUrl = `http://localhost:9090${item.ruta_imagen}`; 
+                const imageUrl = `http://localhost:9090${item.ruta_imagen}`; // URL completa
 
                 const cartItemDiv = document.createElement('div');
                 cartItemDiv.className = 'flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 mb-4';
@@ -73,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="flex flex-col items-end">
                         <span class="text-lg font-bold text-gray-900 dark:text-white mb-2">$${itemPrice.toFixed(2)}</span>
                         <button class="remove-item-btn text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-medium text-sm"
-                                data-item-id="${item.id}">
+                                data-item-id="${item.id}" aria-label="Eliminar ${item.nombre}">
                             Eliminar
                         </button>
                     </div>
@@ -82,17 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Actualizar totales
-        cartSubtotalElement.textContent = `$${total.toFixed(2)}`;
-        cartTotalElement.textContent = `$${total.toFixed(2)}`; // Asumiendo envío gratis
+        cartTotalElement.textContent = `$${total.toFixed(2)}`;
 
-        // Añadir listeners a los botones de eliminar
+        // Añadir event listeners a los botones de eliminar
         document.querySelectorAll('.remove-item-btn').forEach(button => {
             button.addEventListener('click', handleRemoveItem);
         });
     }
 
-    // --- Función para eliminar un producto del carrito ---
+    // Funcion para eliminar un producto del carrito
     async function handleRemoveItem(event) {
         const itemId = event.target.dataset.itemId;
         if (!itemId) return;
@@ -101,38 +113,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`${CART_API_URL}/${itemId}`, {
                 method: 'DELETE'
             });
-
             if (!response.ok) throw new Error('Error al eliminar');
-            
-            // Recargar el carrito y el contador del navbar
-            fetchAndDisplayCart();
-            if (window.loadNavbar) {
-                window.loadNavbar(); // Asumiendo que loadNavbar está en el scope global
-            } else if (typeof importScripts === 'function') {
-                // Si estamos en un módulo, necesitamos una forma de recargar el navbar.
-                // Lo más fácil es recargar la página, pero lo ideal es que navbar.js exponga updateCartCounter
-                location.reload(); // Recarga la página para ver el cambio
-            }
+
+            alert('Artículo eliminado del carrito.');
+            fetchAndDisplayCart(); // Recargar el carrito
 
         } catch (error) {
             console.error('Error al eliminar del carrito:', error);
-            alert('Error al eliminar producto.');
+            alert('Error al eliminar el artículo. Intente de nuevo.');
         }
     }
 
-    // --- Manejar el envío del formulario de pago ---
+    // Manejar el envío del formulario de pago
     paymentForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Evitar el envío predeterminado
+
         if (currentCartItems.length === 0) {
             alert('Tu carrito está vacío.');
             return;
         }
 
+        // recopilar la información del cliente
         const customerInfo = {
             nombre: document.getElementById('nombre').value,
             direccion: document.getElementById('direccion').value,
-            email: document.getElementById('email').value
+            email: document.getElementById('email').value // Esto leerá el valor (incluso si está deshabilitado)
         };
+
+        // recopilar el total
         const total = parseFloat(cartTotalElement.textContent.replace('$', ''));
 
         const orderData = {
@@ -141,26 +149,40 @@ document.addEventListener('DOMContentLoaded', () => {
             total
         };
 
+        const submitButton = paymentForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Procesando...';
+
         try {
+            // Enviar la orden al backend
             const response = await fetch(ORDER_API_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify(orderData)
             });
 
-            if (!response.ok) throw new Error('Error al crear la orden');
-            
-            alert('¡Pedido confirmado con éxito! Gracias por tu compra.');
-            
-            // Redirigir a "Mis Pedidos" o al inicio
-            window.location.href = './misPedidos.html'; // o './index.html'
+            if (!response.ok) {
+                throw new Error('Error al procesar la orden');
+            }
+
+            alert('¡Pedido confirmado con éxito! Tu carrito ha sido vaciado.');
+            window.location.href = '/html/misPedidos.html'; // Redirigir a "Mis Pedidos"
 
         } catch (error) {
             console.error('Error al confirmar el pedido:', error);
-            alert('Error al confirmar el pedido. Intenta de nuevo.');
+            alert('Error al confirmar el pedido. Por favor, intente de nuevo.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Confirmar Pedido';
         }
     });
 
-    // Carga inicial del carrito
-    fetchAndDisplayCart();
+    // Carga inicial
+    // Verificar que los elementos base existen antes de hacer el fetch
+    if (cartItemsContainer && cartTotalElement && paymentForm) {
+        fetchAndDisplayCart();
+    } else {
+        console.error('Error crítico: Faltan elementos HTML (cart-items-container, cart-total o payment-form).');
+    }
 });

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pedidos</title>
   <link href="../output.css" rel="stylesheet">
   <!-- Flowbite JS para el toggle del menú -->
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -22,22 +22,25 @@
     </script>
   </header>
 
-  <main class="flex-grow">
-
+  <main class="flex-grow container mx-auto px-4 py-8">
+    
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Mis Pedidos</h1>
+    <div id="orders-container" class="space-y-4">
+    </div>
     <!--placeholder para cuando no hay pedidos -->
-    <section id="pedidos-placeholder" class="py-12">
+    <section id="pedidos-placeholder" class="py-12 hidden">
       <div class="container mx-auto px-4 text-center">
         <div class="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-2xl p-8 border border-dashed border-gray-300 dark:border-gray-700">
           <div class="flex flex-col items-center">
             <!-- Icono SVG -->
-            <svg class="w-16 h-16 text-red-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+            <svg class="w-16 h-16 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
             </svg>
-            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">¡Oh, no! Algo salió mal.</h2>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Aún no tienes pedidos</h2>
             <p class="text-gray-600 dark:text-gray-400">
-              Parece que no hay pedidos para mostrar.
-              Por favor, inténtalo de nuevo más tarde.
+              Parece que no has realizado ninguna compra. ¡Ve a la tienda para empezar!
             </p>
+            <a href="/html/compras.html" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Ir a la Tienda</a>
           </div>
         </div>
       </div>
@@ -52,6 +55,7 @@
       loadFooter();
     </script>
   </div>
+  <script src="../js/misPedidos.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 

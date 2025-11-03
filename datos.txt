@@ -16,5 +16,23 @@
     "nombre": "Tonicol 100 piezas",
     "precio": 1800,
     "ruta_imagen": "/tonicol.webp"
+  },
+  {
+    "id": "item003",
+    "nombre": "Tonicol 100 piezas",
+    "precio": 1800,
+    "ruta_imagen": "/tonicol.webp"
+  },
+  {
+    "id": "item003",
+    "nombre": "Tonicol 100 piezas",
+    "precio": 1800,
+    "ruta_imagen": "/tonicol.webp"
+  },
+  {
+    "id": "item003",
+    "nombre": "Tonicol 100 piezas",
+    "precio": 1800,
+    "ruta_imagen": "/tonicol.webp"
   }
 ]

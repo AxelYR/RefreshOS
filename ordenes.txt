@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "orderId": "1762187169959",
+    "timestamp": "2025-11-03T16:26:09.960Z",
+    "customerInfo": {
+      "nombre": "aaaa",
+      "direccion": "w",
+      "email": "xorecoyeah@outlook.com"
+    },
+    "cartItems": [
+      {
+        "id": "item003",
+        "nombre": "Tonicol 100 piezas",
+        "precio": 1800,
+        "ruta_imagen": "/tonicol.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 1800
+  },
+  {
+    "orderId": "1762187575341",
+    "timestamp": "2025-11-03T16:32:55.343Z",
+    "customerInfo": {
+      "nombre": "aaaa",
+      "direccion": "w",
+      "email": "xarekyeah@gmail.com"
+    },
+    "cartItems": [
+      {
+        "id": "item003",
+        "nombre": "Tonicol 100 piezas",
+        "precio": 1800,
+        "ruta_imagen": "/tonicol.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 1800
+  },
+  {
+    "orderId": "1762188378733",
+    "timestamp": "2025-11-03T16:46:18.734Z",
+    "customerInfo": {
+      "nombre": "w",
+      "direccion": "w",
+      "email": "xarekyeah@gmail.com"
+    },
+    "cartItems": [
+      {
+        "id": "item002",
+        "nombre": "Coca cola 100 piezas",
+        "precio": 1900,
+        "ruta_imagen": "/cocacola.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 1900
+  }
+]
