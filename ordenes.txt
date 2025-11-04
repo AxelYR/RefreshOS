@@ -55,5 +55,76 @@
       }
     ],
     "total": 1900
+  },
+  {
+    "orderId": "1762190673815",
+    "timestamp": "2025-11-03T17:24:33.817Z",
+    "customerInfo": {
+      "nombre": "axel reynaga",
+      "direccion": "calle 123",
+      "email": "axelyaelreynaga3@gmail.com"
+    },
+    "cartItems": [
+      {
+        "id": "item003",
+        "nombre": "Tonicol 100 piezas",
+        "precio": 1800,
+        "ruta_imagen": "/tonicol.webp",
+        "cantidad": 1
+      },
+      {
+        "id": "item002",
+        "nombre": "Coca cola 100 piezas",
+        "precio": 1900,
+        "ruta_imagen": "/cocacola.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 3700
+  },
+  {
+    "orderId": "1762190756528",
+    "timestamp": "2025-11-03T17:25:56.530Z",
+    "customerInfo": {
+      "nombre": "axel reynaga",
+      "direccion": "calle 123",
+      "email": "xarekyeah@gmail.com"
+    },
+    "cartItems": [
+      {
+        "id": "item001",
+        "nombre": "Sprite 100 piezas",
+        "precio": 2200,
+        "ruta_imagen": "/sprite.webp",
+        "cantidad": 1
+      },
+      {
+        "id": "item002",
+        "nombre": "Coca cola 100 piezas",
+        "precio": 1900,
+        "ruta_imagen": "/cocacola.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 4100
+  },
+  {
+    "orderId": "1762219316741",
+    "timestamp": "2025-11-04T01:21:56.742Z",
+    "customerInfo": {
+      "nombre": "lopez",
+      "direccion": "calle 123",
+      "email": "lopez@gmail.com"
+    },
+    "cartItems": [
+      {
+        "id": "item003",
+        "nombre": "Tonicol 100 piezas",
+        "precio": 1800,
+        "ruta_imagen": "/tonicol.webp",
+        "cantidad": 1
+      }
+    ],
+    "total": 1800
   }
 ]

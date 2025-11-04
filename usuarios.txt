@@ -8,5 +8,15 @@
     "id": "1762187554672",
     "email": "xarekyeah@gmail.com",
     "password": "1234"
+  },
+  {
+    "id": "1762190563094",
+    "email": "axelyaelreynaga3@gmail.com",
+    "password": "12345"
+  },
+  {
+    "id": "1762219219065",
+    "email": "lopez@gmail.com",
+    "password": "1234"
   }
 ]

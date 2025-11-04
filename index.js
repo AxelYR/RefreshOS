@@ -24,6 +24,6 @@ escucha(app); // Carga rutas (GET /data, POST /cart, etc.)
 app.listen('9090', function(){
     console.log('Servidor escuchando en http://localhost:9090');
     console.log('---');
-    console.log('Tu página de inicio está en: http://localhost:9090/html/index.html');
-    console.log('Tu tienda está en: http://localhost:9090/html/compras.html');
+    console.log('Página de inicio en: http://localhost:9090/html/index.html');
+    console.log('Tienda  en: http://localhost:9090/html/compras.html');
 });
